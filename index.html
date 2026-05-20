@@ -577,7 +577,69 @@
     .form-container iframe { height: 1400px; }
   }
 
-  /* SCROLL REVEAL */
+  /* MANIFESTO DEMANDS */
+  .manifesto-demands {
+    display: flex; flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(212,134,10,0.2);
+    overflow: hidden;
+  }
+  .demand-item {
+    display: grid;
+    grid-template-columns: 90px 1fr 60px;
+    gap: 0;
+    border-bottom: 1px solid rgba(212,134,10,0.12);
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .demand-item:last-child { border-bottom: none; }
+  .demand-item::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: rgba(212,134,10,0.06);
+    transition: width 0.4s ease;
+  }
+  .demand-item:hover::before { width: 100%; }
+  .demand-left {
+    background: rgba(212,134,10,0.05);
+    border-right: 1px solid rgba(212,134,10,0.12);
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem 1rem;
+  }
+  .demand-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem; color: var(--amber);
+    line-height: 1; letter-spacing: 2px;
+  }
+  .demand-body {
+    padding: 2rem 2rem 2rem 2.5rem;
+    position: relative; z-index: 1;
+  }
+  .demand-tag {
+    font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.75rem;
+    font-family: 'Space Mono', monospace;
+  }
+  .demand-text {
+    font-size: 0.88rem; line-height: 1.85;
+    color: var(--text2);
+  }
+  .demand-text strong { color: var(--amber-light); font-weight: 700; }
+  .demand-icon {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    border-left: 1px solid rgba(212,134,10,0.12);
+    padding: 1rem;
+    position: relative; z-index: 1;
+  }
+  @media (max-width: 600px) {
+    .demand-item { grid-template-columns: 60px 1fr; }
+    .demand-icon { display: none; }
+  }
+
+
   .reveal {
     opacity: 0; transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
@@ -596,7 +658,7 @@
     <li><a href="#ideology">विचारधारा</a></li>
     <li><a href="#swarm">द स्वार्म</a></li>
     <li><a href="#battlegrounds">मोर्चे</a></li>
-    <li><a href="#tech">इंफ्रा</a></li>
+    <li><a href="#manifesto">मांगें</a></li>
     <li><a href="#join">जुड़ें</a></li>
   </ul>
 </nav>
@@ -787,7 +849,71 @@
 
 <div class="divider"></div>
 
-<!-- TECH -->
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="section-label">📜 The Five Demands</div>
+  <h2 class="section-title">The <span>Manifesto.</span></h2>
+  <p class="section-sub">Read it once. Read it twice. Then send it to someone who needs to read it.</p>
+
+  <div class="manifesto-demands reveal">
+
+    <div class="demand-item">
+      <div class="demand-left">
+        <div class="demand-num">01</div>
+      </div>
+      <div class="demand-body">
+        <div class="demand-tag">Judicial Independence</div>
+        <p class="demand-text">If the CKP comes in power, <strong>no Chief Justice shall be granted a Rajya Sabha seat</strong> as a post-retirement reward. Justice must not be auctioned for political loyalty.</p>
+      </div>
+      <div class="demand-icon">⚖️</div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-left">
+        <div class="demand-num">02</div>
+      </div>
+      <div class="demand-body">
+        <div class="demand-tag">Electoral Integrity</div>
+        <p class="demand-text">If any legitimate vote is deleted — whether in a CKP or opposition-ruled state — <strong>the Chief Election Commissioner shall be arrested under UAPA.</strong> Taking away a citizen's voting rights is no less than terrorism.</p>
+      </div>
+      <div class="demand-icon">🗳️</div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-left">
+        <div class="demand-num">03</div>
+      </div>
+      <div class="demand-body">
+        <div class="demand-tag">True Gender Representation</div>
+        <p class="demand-text">Women shall receive <strong>50% reservation — not 33%</strong> — without increasing the strength of Parliament. Additionally, <strong>50% of all Cabinet positions</strong> shall be reserved for women. Tokenism ends here.</p>
+      </div>
+      <div class="demand-icon">✊</div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-left">
+        <div class="demand-num">04</div>
+      </div>
+      <div class="demand-body">
+        <div class="demand-tag">Media Freedom</div>
+        <p class="demand-text">All media houses owned by Ambani and Adani shall have <strong>their licences cancelled</strong> to make way for truly independent media. <strong>Bank accounts of Godi media anchors</strong> shall be investigated. The news is not a press release.</p>
+      </div>
+      <div class="demand-icon">📺</div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-left">
+        <div class="demand-num">05</div>
+      </div>
+      <div class="demand-body">
+        <div class="demand-tag">Anti-Defection Zero Tolerance</div>
+        <p class="demand-text">Any MLA or MP who defects from one party to another shall be <strong>barred from contesting elections — and from holding any public office — for 20 years.</strong> Loyalty to the people, not to the highest bidder.</p>
+      </div>
+      <div class="demand-icon">🚫</div>
+    </div>
+
+  </div>
+</section>
 
 <div class="divider"></div>
 
@@ -853,7 +979,7 @@
     <li><a href="#ideology">Ideology</a></li>
     <li><a href="#swarm">The Swarm</a></li>
     <li><a href="#battlegrounds">Battlegrounds</a></li>
-    <li><a href="#tech">Infrastructure</a></li>
+    <li><a href="#manifesto">Manifesto</a></li>
     <li><a href="#join">Join</a></li>
   </ul>
   <div class="footer-copy">
