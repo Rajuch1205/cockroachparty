@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🪳 कॉकरोच क्रांति पार्टी — CKP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --amber: #D4860A;
+    --amber-light: #F5A623;
+    --amber-pale: #FFC95A;
+    --bronze: #8B5E0A;
+    --bronze-dark: #5C3A05;
+    --bg: #0A0804;
+    --bg2: #0F0D08;
+    --bg3: #141008;
+    --surface: #1A1408;
+    --surface2: #221C0A;
+    --text: #F0E6C8;
+    --text2: #B8A882;
+    --text3: #7A6A4A;
+    --red: #C0392B;
+    --green: #27AE60;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: 0.35;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 3px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10,8,4,0.95);
+    border-bottom: 1px solid rgba(212,134,10,0.3);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 2rem;
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem; letter-spacing: 2px;
+    color: var(--amber-light);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .nav-logo span { font-size: 1.5rem; }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    color: var(--text2); text-decoration: none;
+    font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--amber-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+  }
+
+  /* GRID BG */
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(212,134,10,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,134,10,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  /* ROACH SVG BIG */
+  .hero-roach {
+    position: absolute;
+    opacity: 0.06;
+    width: 600px; height: 600px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: roachpulse 8s ease-in-out infinite;
+  }
+  @keyframes roachpulse {
+    0%, 100% { opacity: 0.04; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.07; transform: translate(-50%, -50%) scale(1.05); }
+  }
+
+  .hero-badge {
+    position: relative; z-index: 1;
+    background: var(--bronze-dark);
+    border: 1px solid var(--amber);
+    color: var(--amber-pale);
+    font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+    padding: 0.4rem 1.2rem; border-radius: 2px;
+    margin-bottom: 2rem;
+    animation: fadeup 0.8s ease forwards;
+  }
+  @keyframes fadeup {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-roach-icon {
+    font-size: 5rem; line-height: 1;
+    position: relative; z-index: 1;
+    margin-bottom: 1rem;
+    animation: fadeup 0.8s 0.1s ease forwards backwards;
+    display: block;
+    filter: drop-shadow(0 0 30px rgba(212,134,10,0.4));
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: 4px;
+    position: relative; z-index: 1;
+    animation: fadeup 0.8s 0.2s ease forwards backwards;
+    color: var(--amber-light);
+    text-shadow: 0 0 60px rgba(212,134,10,0.3);
+  }
+  .hero-title .hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-weight: 900;
+    display: block;
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    color: var(--text);
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+  }
+  .hero-tagline {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: var(--amber);
+    letter-spacing: 2px;
+    margin: 1.5rem 0;
+    position: relative; z-index: 1;
+    animation: fadeup 0.8s 0.3s ease forwards backwards;
+  }
+  .hero-tagline em {
+    font-style: normal; color: var(--text2);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75em;
+  }
+  .hero-desc {
+    max-width: 700px;
+    font-size: 0.85rem; line-height: 1.8;
+    color: var(--text2);
+    position: relative; z-index: 1;
+    animation: fadeup 0.8s 0.4s ease forwards backwards;
+    margin-bottom: 2.5rem;
+  }
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 1;
+    animation: fadeup 0.8s 0.5s ease forwards backwards;
+  }
+  .btn-primary {
+    background: var(--amber);
+    color: var(--bg);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem; border: none;
+    cursor: pointer; text-decoration: none;
+    font-weight: 700;
+    transition: all 0.2s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .btn-primary:hover { background: var(--amber-pale); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--amber);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    border: 1px solid var(--amber);
+    cursor: pointer; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: rgba(212,134,10,0.1); }
+
+  /* TICKER */
+  .ticker {
+    background: var(--amber);
+    color: var(--bg);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 1px;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+  }
+  @keyframes ticker {
+    from { transform: translateX(100vw); }
+    to { transform: translateX(-100%); }
+  }
+
+  /* SECTIONS COMMON */
+  section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--amber), transparent);
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1; letter-spacing: 3px;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .section-title span { color: var(--amber); }
+  .section-sub {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: var(--text3); font-size: 0.9rem;
+    margin-bottom: 3rem;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    opacity: 0.3;
+  }
+
+  /* IDEOLOGY */
+  .ideology-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(212,134,10,0.15);
+    border: 1px solid rgba(212,134,10,0.2);
+  }
+  .ideology-card {
+    background: var(--bg2);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .ideology-card:hover { background: var(--surface); }
+  .ideology-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--amber);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .ideology-card:hover::before { opacity: 1; }
+  .ideology-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem; color: rgba(212,134,10,0.12);
+    line-height: 1; position: absolute;
+    bottom: 1rem; right: 1.5rem;
+  }
+  .ideology-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .ideology-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--amber-light); margin-bottom: 0.75rem;
+    letter-spacing: 1px;
+  }
+  .ideology-text {
+    font-size: 0.78rem; line-height: 1.8;
+    color: var(--text2);
+  }
+
+  /* SWARM */
+  .swarm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: rgba(212,134,10,0.1);
+  }
+  .swarm-card {
+    background: var(--bg2);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .swarm-card:hover { background: var(--surface); transform: translateY(-4px); }
+  .swarm-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--amber);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .swarm-card:hover::after { transform: scaleX(1); }
+  .swarm-emoji { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+  .swarm-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem; font-weight: 800;
+    color: var(--amber-light);
+    text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+  }
+  .swarm-desc { font-size: 0.75rem; line-height: 1.7; color: var(--text2); }
+
+  /* BATTLEGROUNDS */
+  .battle-list { display: flex; flex-direction: column; gap: 0; }
+  .battle-item {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: var(--bg2);
+    border-bottom: 1px solid rgba(212,134,10,0.1);
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .battle-item:hover { background: var(--surface); padding-left: 2.5rem; }
+  .battle-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem; color: rgba(212,134,10,0.25);
+    line-height: 1;
+  }
+  .battle-content {}
+  .battle-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--text); margin-bottom: 0.4rem;
+  }
+  .battle-desc { font-size: 0.75rem; line-height: 1.7; color: var(--text2); }
+  .battle-status {
+    font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    white-space: nowrap;
+  }
+  .status-active { background: rgba(39,174,96,0.15); color: var(--green); border: 1px solid rgba(39,174,96,0.3); }
+  .status-ops { background: rgba(212,134,10,0.15); color: var(--amber); border: 1px solid rgba(212,134,10,0.3); }
+  .status-war { background: rgba(192,57,43,0.15); color: var(--red); border: 1px solid rgba(192,57,43,0.3); }
+
+  /* TECH */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: rgba(212,134,10,0.08);
+    border: 1px solid rgba(212,134,10,0.15);
+  }
+  .tech-item {
+    background: var(--bg2);
+    padding: 1.5rem;
+    transition: background 0.2s;
+  }
+  .tech-item:hover { background: var(--surface); }
+  .tech-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
+  .tech-label {
+    font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.4rem;
+  }
+  .tech-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem; color: var(--text);
+    word-break: break-all; line-height: 1.5;
+  }
+
+  /* FORM */
+  .join-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .join-left {}
+  .join-manifesto {
+    background: var(--surface);
+    border-left: 3px solid var(--amber);
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+  }
+  .join-manifesto p {
+    font-size: 0.8rem; line-height: 1.9;
+    color: var(--text2);
+  }
+  .join-manifesto p + p { margin-top: 1rem; }
+  .join-manifesto strong { color: var(--amber-light); }
+  .form-container {
+    background: var(--bg2);
+    border: 1px solid rgba(212,134,10,0.2);
+    padding: 0;
+    overflow: hidden;
+  }
+  .form-header {
+    background: var(--amber);
+    color: var(--bg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; letter-spacing: 3px;
+    padding: 0.75rem 1.5rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .form-container iframe {
+    display: block;
+    width: 100%;
+    border: none;
+    background: #fff;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg2);
+    border-top: 1px solid rgba(212,134,10,0.2);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem; color: var(--amber);
+    letter-spacing: 4px; margin-bottom: 0.5rem;
+  }
+  .footer-tagline {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.85rem; color: var(--text3);
+    letter-spacing: 1px; margin-bottom: 2rem;
+  }
+  .footer-links {
+    display: flex; gap: 2rem; justify-content: center;
+    list-style: none; margin-bottom: 2rem;
+  }
+  .footer-links a {
+    font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text3); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--amber); }
+  .footer-copy {
+    font-size: 0.65rem; color: var(--text3); letter-spacing: 1px;
+    border-top: 1px solid rgba(212,134,10,0.1); padding-top: 1.5rem;
+  }
+  .footer-copy a { color: var(--amber); text-decoration: none; }
+
+  /* MANIFESTO QUOTE */
+  .quote-block {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: var(--bg2);
+    position: relative; overflow: hidden;
+  }
+  .quote-block::before {
+    content: '""';
+    position: absolute; top: -2rem; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20rem; color: rgba(212,134,10,0.04);
+    line-height: 1; pointer-events: none;
+  }
+  .quote-text {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.4;
+    max-width: 800px; margin: 0 auto 1.5rem;
+    position: relative; z-index: 1;
+  }
+  .quote-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; color: var(--amber);
+    letter-spacing: 2px; text-transform: uppercase;
+    position: relative; z-index: 1;
+  }
+
+  /* STATS */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(212,134,10,0.1);
+    border: 1px solid rgba(212,134,10,0.15);
+    margin: 3rem 0;
+  }
+  .stat-box {
+    background: var(--bg2);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; color: var(--amber-light);
+    line-height: 1; letter-spacing: 2px;
+  }
+  .stat-label {
+    font-size: 0.65rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text3);
+    margin-top: 0.4rem;
+  }
+
+  /* COCKROACH MANIFESTO SECTION */
+  .manifesto-section {
+    background: var(--bg2);
+    padding: 0;
+  }
+  .manifesto-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  /* ANIMATED COCKROACH */
+  .roach-parade {
+    display: flex; gap: 1.5rem;
+    overflow: hidden;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(212,134,10,0.15);
+    border-bottom: 1px solid rgba(212,134,10,0.15);
+    margin: 3rem 0;
+  }
+  .roach-parade-inner {
+    display: flex; gap: 2rem;
+    animation: parade 15s linear infinite;
+    white-space: nowrap;
+    font-size: 1.5rem;
+  }
+  @keyframes parade {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .ideology-wrap { grid-template-columns: 1fr; }
+    .join-wrap { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    nav .nav-links { display: none; }
+    .battle-item { grid-template-columns: 40px 1fr; }
+    .battle-status { display: none; }
+  }
+  @media (max-width: 600px) {
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .form-container iframe { height: 1400px; }
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1; transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><img src="ckp-logo.png" alt="CKP Logo" style="width:36px;height:36px;border-radius:50%;object-fit:cover;"> CKP</div>
+  <ul class="nav-links">
+    <li><a href="#ideology">विचारधारा</a></li>
+    <li><a href="#swarm">द स्वार्म</a></li>
+    <li><a href="#battlegrounds">मोर्चे</a></li>
+    <li><a href="#tech">इंफ्रा</a></li>
+    <li><a href="#join">जुड़ें</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="max-width:100%; padding-top: 5rem;">
+  <img src="ckp-logo.png" class="hero-roach" alt="" aria-hidden="true" style="border-radius:50%; object-fit:cover;">
+
+  <div class="hero-badge">⚡ India's Most Resilient Political Front ⚡ Since We Got Tired of Waiting</div>
+  <img src="ckp-logo.png" class="hero-roach-icon" alt="CKP Logo" style="width:140px;height:140px;border-radius:50%;object-fit:cover;display:block;font-size:unset;filter:drop-shadow(0 0 40px rgba(212,134,10,0.5));border:2px solid rgba(212,134,10,0.4);">
+  <h1 class="hero-title">
+    COCKROACH<br>KRANTI PARTY
+    <span class="hindi">कॉकरोच क्रांति पार्टी</span>
+  </h1>
+  <p class="hero-tagline">
+    "अटल संघर्ष। अजेय आवाज़।"<br>
+    <em>Untiring Struggle. Unconquerable Voice.</em>
+  </p>
+  <p class="hero-desc">
+    A secular, socialist, democratic, and proudly <strong style="color:var(--amber-light)">"lazy"</strong> political front — of the youth, by the youth, for the youth.
+    Just like a cockroach, the common citizen survives every systemic failure, economic crash, and administrative disaster.
+    Born from the real frustrations of the <strong style="color:var(--amber-light)">youth of this nation</strong> — we are here to outlive the system.
+  </p>
+  <div class="hero-btns">
+    <a href="#join" class="btn-primary">🪳 The Swarm में शामिल हों</a>
+    <a href="#ideology" class="btn-outline">विचारधारा पढ़ें →</a>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" role="marquee" aria-label="CKP news ticker">
+  <span class="ticker-inner">
+    🪳 CKP — Surviving Every System Since Day One &nbsp;⚡&nbsp; पानी कहाँ है? &nbsp;⚡&nbsp; अस्पताल रेफरल सेंटर नहीं होने चाहिए &nbsp;⚡&nbsp; Paper Leak = National Crime &nbsp;⚡&nbsp; 11 Hours Screen Time Minimum &nbsp;⚡&nbsp; Judges ≠ Corporate Chairs &nbsp;⚡&nbsp; Turncoats Will Be Named &nbsp;⚡&nbsp; www.cockroachkrantiparty.in &nbsp;⚡&nbsp; जो टूटा नहीं, वो कॉकरोच है &nbsp;⚡&nbsp; #KrantiIsNotViolence &nbsp;⚡&nbsp; 🪳 CKP — Surviving Every System Since Day One &nbsp;⚡&nbsp; पानी कहाँ है? &nbsp;⚡&nbsp; अस्पताल रेफरल सेंटर नहीं होने चाहिए &nbsp;⚡&nbsp; Paper Leak = National Crime &nbsp;⚡&nbsp;
+  </span>
+</div>
+
+<!-- STATS -->
+<div style="max-width:1200px; margin:0 auto; padding: 0 2rem;">
+  <div class="stats-row reveal">
+    <div class="stat-box">
+      <div class="stat-num">11+</div>
+      <div class="stat-label">Hours Online Daily</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Violence Incidents</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Memes Deployed</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Active Divisions</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROACH PARADE -->
+<div class="roach-parade" aria-hidden="true">
+  <div class="roach-parade-inner">
+    🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp;
+  </div>
+</div>
+
+<!-- IDEOLOGY -->
+<section id="ideology">
+  <div class="section-label">📜 Core Ideology</div>
+  <h2 class="section-title">हम क्यों <span>लड़ते हैं</span></h2>
+  <p class="section-sub">Why We Fight — The Philosophy of Digital Resistance</p>
+  <div class="ideology-wrap reveal">
+    <div class="ideology-card">
+      <div class="ideology-icon">⚡</div>
+      <div class="ideology-title">System Is Broken</div>
+      <p class="ideology-text">Traditional outrage is no longer effective. The system is broken, and polite complaints have been ignored for decades. CKP accepts this reality and works within it — not by burning it down, but by documenting every crack until the weight of truth collapses it.</p>
+      <div class="ideology-num">01</div>
+    </div>
+    <div class="ideology-card">
+      <div class="ideology-icon">🎭</div>
+      <div class="ideology-title">Weaponized Irony</div>
+      <p class="ideology-text">CKP weaponizes irony, digital chronic online presence, and absolute transparency to mock, track, and expose systemic decay. Satire is the sharpest sword when all other blades have been confiscated.</p>
+      <div class="ideology-num">02</div>
+    </div>
+    <div class="ideology-card">
+      <div class="ideology-icon">📊</div>
+      <div class="ideology-title">Protest With Data</div>
+      <p class="ideology-text">We do not protest with violence. We protest with undeniable data, relentless memes, and professional ranting. Every failure is documented. Every statistic is cited. Every betrayal is timestamped. We are the paper trail they cannot shred.</p>
+      <div class="ideology-num">03</div>
+    </div>
+    <div class="ideology-card">
+      <div class="ideology-icon">🌱</div>
+      <div class="ideology-title">Grassroots Origin</div>
+      <p class="ideology-text">Born from watching regional hospitals function as "referral centers" instead of saving lives, and waiting for drinking water projects that never materialize. This isn't theoretical. This is lived experience, weaponized.</p>
+      <div class="ideology-num">04</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE -->
+<div class="quote-block">
+  <p class="quote-text">"जब बाढ़ आती है, नेता बच जाते हैं। जब महामारी आती है, नेता बच जाते हैं। जब व्यवस्था चरमराती है — हम बचते हैं। हम कॉकरोच हैं।"</p>
+  <p class="quote-sub">— CKP Founding Manifesto</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- SWARM -->
+<section id="swarm">
+  <div class="section-label">👥 Membership Criteria</div>
+  <h2 class="section-title">The <span>Swarm</span></h2>
+  <p class="section-sub">आधिकारिक सदस्यता मानदंड — Official Eligibility Criteria</p>
+  <div class="swarm-grid reveal">
+    <div class="swarm-card">
+      <span class="swarm-emoji">😴</span>
+      <div class="swarm-title">बेरोजगार</div>
+      <p class="swarm-desc">Unemployed: by force, by choice, or by pure principle. We don't ask. The system failed you first — your unemployment is a political statement.</p>
+    </div>
+    <div class="swarm-card">
+      <span class="swarm-emoji">🧠</span>
+      <div class="swarm-title">Physically Lazy</div>
+      <p class="swarm-desc">Lazy: physically only. The brain must continue to spiral relentlessly about the state of the world. Couch-bound activism is still activism.</p>
+    </div>
+    <div class="swarm-card">
+      <span class="swarm-emoji">📱</span>
+      <div class="swarm-title">Chronically Online</div>
+      <p class="swarm-desc">Minimum 11 hours a day of screen time, including bathroom breaks. The blue light sustains us. The WiFi is our oxygen. The notifications are our heartbeat.</p>
+    </div>
+    <div class="swarm-card">
+      <span class="swarm-emoji">🎙️</span>
+      <div class="swarm-title">Professional Ranter</div>
+      <p class="swarm-desc">Must possess a proven ability to vocalize systemic flaws with flair and logic. Incoherent rage alone is not enough. You need receipts. You need timestamps.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BATTLEGROUNDS -->
+<section id="battlegrounds">
+  <div class="section-label">🎯 Divisions</div>
+  <h2 class="section-title">Key <span>Battlegrounds</span></h2>
+  <p class="section-sub">Where The Digital Resistance Is Deployed</p>
+  <div class="battle-list reveal">
+    <div class="battle-item">
+      <div class="battle-num">01</div>
+      <div class="battle-content">
+        <div class="battle-title">📋 Anti-Paper Leak Division</div>
+        <p class="battle-desc">Exposing competitive exam scams and protecting student futures. Every leaked paper is a stolen dream. We name, shame, and document with evidence.</p>
+      </div>
+      <span class="battle-status status-active">Active</span>
+    </div>
+    <div class="battle-item">
+      <div class="battle-num">02</div>
+      <div class="battle-content">
+        <div class="battle-title">⚖️ Judicial Transparency</div>
+        <p class="battle-desc">Campaigning to ban post-retirement political and corporate seats for judges. Independence of judiciary begins after the robe, not just during it.</p>
+      </div>
+      <span class="battle-status status-ops">Mobilizing</span>
+    </div>
+    <div class="battle-item">
+      <div class="battle-num">03</div>
+      <div class="battle-content">
+        <div class="battle-title">🔄 Political Turncoat Accountability</div>
+        <p class="battle-desc">Tracking and publicly calling out leaders who jump parties for power. Loyalty ledgers, public records, and infinite meme archives — we never forget.</p>
+      </div>
+      <span class="battle-status status-active">Active</span>
+    </div>
+    <div class="battle-item">
+      <div class="battle-num">04</div>
+      <div class="battle-content">
+        <div class="battle-title">🏗️ Local Administrative Accountability</div>
+        <p class="battle-desc">Highlighting daily failures of regional infrastructure — from phantom water supplies to negligent medical facilities. Local issues, national shame.</p>
+      </div>
+      <span class="battle-status status-active">Active</span>
+    </div>
+    <div class="battle-item">
+      <div class="battle-num">05</div>
+      <div class="battle-content">
+        <div class="battle-title">💀 Pure Meme Warfare</div>
+        <p class="battle-desc">Operating as a counter-resistance to mainstream digital IT cells. We don't have a budget. We have creativity, rage, and an unhealthy amount of free time.</p>
+      </div>
+      <span class="battle-status status-war">Full War Mode</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TECH -->
+<section id="tech">
+  <div class="section-label">💻 Digital Headquarters</div>
+  <h2 class="section-title">The <span>Infrastructure</span></h2>
+  <p class="section-sub">Zero-cost. Privacy-compliant. Built to scale. Impossible to kill.</p>
+  <div class="tech-grid reveal">
+    <div class="tech-item">
+      <span class="tech-icon">🌐</span>
+      <div class="tech-label">Official Domain</div>
+      <div class="tech-value">www.cockroachkrantiparty.in<br><small style="color:var(--text3); font-size:0.65rem;">Registered via NIXI</small></div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-icon">⚡</span>
+      <div class="tech-label">Hosting</div>
+      <div class="tech-value">Open Source Hosting<br><small style="color:var(--text3); font-size:0.65rem;">Free & open source, zero cost infrastructure</small></div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-icon">🎨</span>
+      <div class="tech-label">Aesthetic</div>
+      <div class="tech-value">Dark-themed portal<br><small style="color:var(--text3); font-size:0.65rem;">Amber & Bronze Cockroach Insignia</small></div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-icon">📥</span>
+      <div class="tech-label">Data Ingestion</div>
+      <div class="tech-value">Google Forms<br><small style="color:var(--text3); font-size:0.65rem;">Real-time member registration</small></div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-icon">🔒</span>
+      <div class="tech-label">Secure Database</div>
+      <div class="tech-value">Google Sheets<br><small style="color:var(--text3); font-size:0.65rem;">Privately locked & encrypted</small></div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-icon">⚖️</span>
+      <div class="tech-label">Legal Compliance</div>
+      <div class="tech-value">DPDP Act Compliant<br><small style="color:var(--text3); font-size:0.65rem;">Explicit consent. Never sold. Movement use only.</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- JOIN -->
+<section id="join" style="max-width:1200px;">
+  <div class="section-label">🪳 Enlist</div>
+  <h2 class="section-title">Swarm में <span>जुड़ें</span></h2>
+  <p class="section-sub">Join The Cockroach Kranti Party — Official Member Registration</p>
+
+  <div class="join-wrap reveal">
+    <div class="join-left">
+      <p style="font-size:0.85rem; line-height:1.8; color:var(--text2); margin-bottom:1.5rem;">
+        The swarm grows one roach at a time. By registering, you become an official member of the CKP digital resistance network. Your data is handled with full compliance under the Indian <strong style="color:var(--amber-light)">DPDP Act</strong> — never sold, never shared with third parties, used strictly for movement operations.
+      </p>
+      <div class="join-manifesto">
+        <p>
+          <strong>हम क्या वादा करते हैं:</strong><br>
+          We will document. We will expose. We will never shut up. We will outlive every system that tried to ignore us. The cockroach does not ask permission to survive.
+        </p>
+        <p>
+          <strong>आप क्या वादा करते हैं:</strong><br>
+          Minimum 11 hours online. At least one quality rant per week. Sharing verified information, never misinformation. Being the last one standing when the system collapses again.
+        </p>
+        <p style="margin-top:1.5rem; font-size:0.7rem; color:var(--text3); border-top: 1px solid rgba(212,134,10,0.15); padding-top:1rem;">
+          ✅ By submitting, you consent to data collection under DPDP Act compliance.<br>
+          ✅ Your WhatsApp & email will be used exclusively for CKP operations.<br>
+          ✅ Data is never sold to third parties. Ever.
+        </p>
+      </div>
+
+      <div style="margin-top:2rem; padding:1.5rem; background:var(--surface); border:1px solid rgba(212,134,10,0.15);">
+        <div style="font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--amber); margin-bottom:1rem;">Contact HQ</div>
+        <div style="font-size:0.75rem; color:var(--text2); line-height:2;">
+          🌐 <a href="http://www.cockroachkrantiparty.in" style="color:var(--amber); text-decoration:none;">www.cockroachkrantiparty.in</a><br>
+          📡 <span style="color:var(--text3);">Open source hosting — zero cost infrastructure</span><br>
+          🪳 <span style="color:var(--text3);">Digital Headquarters, India</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="join-left">
+      <div class="form-container">
+        <div class="form-header">🪳 Official Member Registration Form</div>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdnWpljDypyLafsz6WURxrTfIfWTIWCqNxoeLTX0Tq7SZctcA/viewform?embedded=true"
+          width="100%"
+          height="1654"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="CKP Member Registration Form"
+          loading="lazy">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="ckp-logo.png" alt="CKP Logo" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid rgba(212,134,10,0.4);margin-bottom:1rem;display:block;margin-left:auto;margin-right:auto;">
+  <div class="footer-tagline">कॉकरोच क्रांति पार्टी — "अटल संघर्ष। अजेय आवाज़।"</div>
+  <ul class="footer-links">
+    <li><a href="#ideology">Ideology</a></li>
+    <li><a href="#swarm">The Swarm</a></li>
+    <li><a href="#battlegrounds">Battlegrounds</a></li>
+    <li><a href="#tech">Infrastructure</a></li>
+    <li><a href="#join">Join</a></li>
+  </ul>
+  <div class="footer-copy">
+    © 2025 Cockroach Kranti Party (CKP) &nbsp;|&nbsp;
+    <a href="http://www.cockroachkrantiparty.in">www.cockroachkrantiparty.in</a> &nbsp;|&nbsp;
+    DPDP Act Compliant &nbsp;|&nbsp;
+    We survive. We always survive. 🪳
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
