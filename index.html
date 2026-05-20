@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en-IN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🪳 कॉकरोच क्रांति पार्टी — CKP</title>
+<meta name="theme-color" content="#D4860A">
+
+<!-- ADVANCED SEO META TAGS -->
+<title>Cockroach Kranti Party (CKP) | The Resilient Cockroach Political Party</title>
+<link rel="icon" type="image/png" href="ckp-logo.png">
+
+<meta name="description" content="Welcome to the Cockroach Kranti Party (CKP) - India's most resilient digital political front. Also known as the Cockroach Party or Cockroach Janata Party. We survive every system.">
+<meta name="keywords" content="Cockroach Kranti Party, CKP, Cockroach Party, Cockroach Janata Party, Cockroach Political Party, Cockroach, Cockroach Revolution, Youth Political Party India">
+<meta name="author" content="Cockroach Kranti Party">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- CANONICAL URL (Prevents duplicate content penalties) -->
+<link rel="canonical" href="https://www.cockroachkrantiparty.in/" />
+
+<!-- OPEN GRAPH / SOCIAL MEDIA META TAGS -->
+<meta property="og:title" content="Cockroach Kranti Party (CKP) | The Ultimate Cockroach Party">
+<meta property="og:description" content="India's most resilient youth political front. Surviving every system since day one. Join the Swarm of the Cockroach Political Party.">
+<meta property="og:image" content="https://www.cockroachkrantiparty.in/ckp-logo.png">
+<meta property="og:url" content="https://www.cockroachkrantiparty.in/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Cockroach Kranti Party">
+
+<!-- PRECONNECT FOR PERFORMANCE -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
+
+<!-- JSON-LD SCHEMA MARKUP FOR GOOGLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PoliticalParty",
+  "name": "Cockroach Kranti Party",
+  "alternateName": ["CKP", "Cockroach Party", "Cockroach Janata Party", "Cockroach Political Party"],
+  "url": "https://www.cockroachkrantiparty.in",
+  "logo": "https://www.cockroachkrantiparty.in/ckp-logo.png",
+  "description": "A secular, socialist, democratic, and proudly lazy political front — of the youth, by the youth, for the youth.",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "India"
+  }
+}
+</script>
+
 <style>
   :root {
     --amber: #D4860A;
@@ -51,7 +93,7 @@
   ::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 3px; }
 
   /* NAV */
-  nav {
+  header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     background: rgba(10,8,4,0.95);
     border-bottom: 1px solid rgba(212,134,10,0.3);
@@ -64,6 +106,7 @@
     font-size: 1.4rem; letter-spacing: 2px;
     color: var(--amber-light);
     display: flex; align-items: center; gap: 0.5rem;
+    text-decoration: none;
   }
   .nav-logo span { font-size: 1.5rem; }
   .nav-links {
@@ -363,7 +406,6 @@
     font-size: 2.5rem; color: rgba(212,134,10,0.25);
     line-height: 1;
   }
-  .battle-content {}
   .battle-title {
     font-family: 'Syne', sans-serif;
     font-size: 0.95rem; font-weight: 700;
@@ -379,31 +421,6 @@
   .status-ops { background: rgba(212,134,10,0.15); color: var(--amber); border: 1px solid rgba(212,134,10,0.3); }
   .status-war { background: rgba(192,57,43,0.15); color: var(--red); border: 1px solid rgba(192,57,43,0.3); }
 
-  /* TECH */
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1px;
-    background: rgba(212,134,10,0.08);
-    border: 1px solid rgba(212,134,10,0.15);
-  }
-  .tech-item {
-    background: var(--bg2);
-    padding: 1.5rem;
-    transition: background 0.2s;
-  }
-  .tech-item:hover { background: var(--surface); }
-  .tech-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
-  .tech-label {
-    font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--amber); margin-bottom: 0.4rem;
-  }
-  .tech-value {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.8rem; color: var(--text);
-    word-break: break-all; line-height: 1.5;
-  }
-
   /* FORM */
   .join-wrap {
     display: grid;
@@ -411,7 +428,6 @@
     gap: 4rem;
     align-items: start;
   }
-  .join-left {}
   .join-manifesto {
     background: var(--surface);
     border-left: 3px solid var(--amber);
@@ -452,15 +468,14 @@
     padding: 3rem 2rem 2rem;
     text-align: center;
   }
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem; color: var(--amber);
-    letter-spacing: 4px; margin-bottom: 0.5rem;
-  }
   .footer-tagline {
     font-family: 'Noto Sans Devanagari', sans-serif;
     font-size: 0.85rem; color: var(--text3);
     letter-spacing: 1px; margin-bottom: 2rem;
+  }
+  .footer-seo-text {
+    font-size: 0.65rem; color: var(--text3); letter-spacing: 1px; margin-bottom: 2rem;
+    max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;
   }
   .footer-links {
     display: flex; gap: 2rem; justify-content: center;
@@ -533,16 +548,6 @@
     margin-top: 0.4rem;
   }
 
-  /* COCKROACH MANIFESTO SECTION */
-  .manifesto-section {
-    background: var(--bg2);
-    padding: 0;
-  }
-  .manifesto-inner {
-    max-width: 1200px; margin: 0 auto;
-    padding: 5rem 2rem;
-  }
-
   /* ANIMATED COCKROACH */
   .roach-parade {
     display: flex; gap: 1.5rem;
@@ -568,7 +573,7 @@
     .ideology-wrap { grid-template-columns: 1fr; }
     .join-wrap { grid-template-columns: 1fr; }
     .stats-row { grid-template-columns: repeat(2, 1fr); }
-    nav .nav-links { display: none; }
+    header .nav-links { display: none; }
     .battle-item { grid-template-columns: 40px 1fr; }
     .battle-status { display: none; }
   }
@@ -639,7 +644,6 @@
     .demand-icon { display: none; }
   }
 
-
   .reveal {
     opacity: 0; transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
@@ -651,340 +655,356 @@
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo"><img src="ckp-logo.png" alt="CKP Logo" style="width:36px;height:36px;border-radius:50%;object-fit:cover;"> CKP</div>
-  <ul class="nav-links">
-    <li><a href="#ideology">विचारधारा</a></li>
-    <li><a href="#swarm">द स्वार्म</a></li>
-    <li><a href="#battlegrounds">मोर्चे</a></li>
-    <li><a href="#manifesto">मांगें</a></li>
-    <li><a href="#join">जुड़ें</a></li>
-  </ul>
-</nav>
+<!-- SEMANTIC HEADER -->
+<header>
+  <a href="/" class="nav-logo" title="Cockroach Kranti Party Home">
+    <img src="ckp-logo.png" alt="Cockroach Kranti Party Logo" width="36" height="36" style="border-radius:50%;object-fit:cover;"> CKP
+  </a>
+  <nav aria-label="Main Navigation">
+    <ul class="nav-links">
+      <li><a href="#ideology" title="Cockroach Party Ideology">विचारधारा</a></li>
+      <li><a href="#swarm" title="Join The Cockroach Swarm">द स्वार्म</a></li>
+      <li><a href="#battlegrounds" title="Cockroach Political Party Battlegrounds">मोर्चे</a></li>
+      <li><a href="#manifesto" title="Cockroach Janata Party Manifesto">मांगें</a></li>
+      <li><a href="#join" title="Join Cockroach Party">जुड़ें</a></li>
+    </ul>
+  </nav>
+</header>
 
-<!-- HERO -->
-<section class="hero" style="max-width:100%; padding-top: 5rem;">
-  <img src="ckp-logo.png" class="hero-roach" alt="" aria-hidden="true" style="border-radius:50%; object-fit:cover;">
+<!-- SEMANTIC MAIN CONTENT WRAPPER -->
+<main>
 
-  <div class="hero-badge">⚡ India's Most Resilient Political Front ⚡ Since We Got Tired of Waiting</div>
-  <img src="ckp-logo.png" class="hero-roach-icon" alt="CKP Logo" style="width:140px;height:140px;border-radius:50%;object-fit:cover;display:block;font-size:unset;filter:drop-shadow(0 0 40px rgba(212,134,10,0.5));border:2px solid rgba(212,134,10,0.4);">
-  <h1 class="hero-title">
-    COCKROACH<br>KRANTI PARTY
-    <span class="hindi">कॉकरोच क्रांति पार्टी</span>
-  </h1>
-  <p class="hero-tagline">
-    "अटल संघर्ष। अजेय आवाज़।"<br>
-    <em>Untiring Struggle. Unconquerable Voice.</em>
-  </p>
-  <p class="hero-desc">
-    A secular, socialist, democratic, and proudly <strong style="color:var(--amber-light)">"lazy"</strong> political front — of the youth, by the youth, for the youth.
-    Just like a cockroach, the common citizen survives every systemic failure, economic crash, and administrative disaster.
-    Born from the real frustrations of the <strong style="color:var(--amber-light)">youth of this nation</strong> — we are here to outlive the system.
-  </p>
-  <div class="hero-btns">
-    <a href="#join" class="btn-primary">🪳 The Swarm में शामिल हों</a>
-    <a href="#ideology" class="btn-outline">विचारधारा पढ़ें →</a>
+  <!-- HERO -->
+  <section class="hero" style="max-width:100%; padding-top: 5rem;" aria-labelledby="hero-title">
+    <img src="ckp-logo.png" class="hero-roach" alt="Background Texture - Cockroach Party" width="600" height="600" aria-hidden="true" style="border-radius:50%; object-fit:cover;">
+
+    <div class="hero-badge">⚡ India's Most Resilient Political Front ⚡ Since We Got Tired of Waiting</div>
+    <img src="ckp-logo.png" class="hero-roach-icon" alt="Cockroach Political Party India Symbol" width="140" height="140" style="border-radius:50%;object-fit:cover;display:block;font-size:unset;filter:drop-shadow(0 0 40px rgba(212,134,10,0.5));border:2px solid rgba(212,134,10,0.4);">
+    <h1 id="hero-title" class="hero-title">
+      COCKROACH<br>KRANTI PARTY
+      <span class="hindi" lang="hi">कॉकरोच क्रांति पार्टी</span>
+    </h1>
+    <p class="hero-tagline">
+      <span lang="hi">"अटल संघर्ष। अजेय आवाज़।"</span><br>
+      <em>Untiring Struggle. Unconquerable Voice.</em>
+    </p>
+    <p class="hero-desc">
+      A secular, socialist, democratic, and proudly <strong style="color:var(--amber-light)">"lazy"</strong> political front — of the youth, by the youth, for the youth.
+      Just like a cockroach, the common citizen survives every systemic failure, economic crash, and administrative disaster.
+      Born from the real frustrations of the <strong style="color:var(--amber-light)">youth of this nation</strong> — we are here to outlive the system.
+    </p>
+    <div class="hero-btns">
+      <a href="#join" class="btn-primary" title="Register as Cockroach Party Member">🪳 The Swarm <span lang="hi">में शामिल हों</span></a>
+      <a href="#ideology" class="btn-outline" title="Read Cockroach Kranti Party Ideology"><span lang="hi">विचारधारा पढ़ें</span> →</a>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" role="marquee" aria-label="CKP news ticker">
+    <span class="ticker-inner">
+      🪳 CKP — Surviving Every System Since Day One &nbsp;⚡&nbsp; पानी कहाँ है? &nbsp;⚡&nbsp; अस्पताल रेफरल सेंटर नहीं होने चाहिए &nbsp;⚡&nbsp; Paper Leak = National Crime &nbsp;⚡&nbsp; 11 Hours Screen Time Minimum &nbsp;⚡&nbsp; Judges ≠ Corporate Chairs &nbsp;⚡&nbsp; Turncoats Will Be Named &nbsp;⚡&nbsp; www.cockroachkrantiparty.in &nbsp;⚡&nbsp; जो टूटा नहीं, वो कॉकरोच है &nbsp;⚡&nbsp; #KrantiIsNotViolence &nbsp;⚡&nbsp; 🪳 CKP — Surviving Every System Since Day One &nbsp;⚡&nbsp; पानी कहाँ है? &nbsp;⚡&nbsp; अस्पताल रेफरल सेंटर नहीं होने चाहिए &nbsp;⚡&nbsp; Paper Leak = National Crime &nbsp;⚡&nbsp;
+    </span>
   </div>
-</section>
 
-<!-- TICKER -->
-<div class="ticker" role="marquee" aria-label="CKP news ticker">
-  <span class="ticker-inner">
-    🪳 CKP — Surviving Every System Since Day One &nbsp;⚡&nbsp; पानी कहाँ है? &nbsp;⚡&nbsp; अस्पताल रेफरल सेंटर नहीं होने चाहिए &nbsp;⚡&nbsp; Paper Leak = National Crime &nbsp;⚡&nbsp; 11 Hours Screen Time Minimum &nbsp;⚡&nbsp; Judges ≠ Corporate Chairs &nbsp;⚡&nbsp; Turncoats Will Be Named &nbsp;⚡&nbsp; www.cockroachkrantiparty.in &nbsp;⚡&nbsp; जो टूटा नहीं, वो कॉकरोच है &nbsp;⚡&nbsp; #KrantiIsNotViolence &nbsp;⚡&nbsp; 🪳 CKP — Surviving Every System Since Day One &nbsp;⚡&nbsp; पानी कहाँ है? &nbsp;⚡&nbsp; अस्पताल रेफरल सेंटर नहीं होने चाहिए &nbsp;⚡&nbsp; Paper Leak = National Crime &nbsp;⚡&nbsp;
-  </span>
-</div>
-
-<!-- STATS -->
-<div style="max-width:1200px; margin:0 auto; padding: 0 2rem;">
-  <div class="stats-row reveal">
-    <div class="stat-box">
-      <div class="stat-num">11+</div>
-      <div class="stat-label">Hours Online Daily</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">0</div>
-      <div class="stat-label">Violence Incidents</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">∞</div>
-      <div class="stat-label">Memes Deployed</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">5</div>
-      <div class="stat-label">Active Divisions</div>
-    </div>
-  </div>
-</div>
-
-<!-- ROACH PARADE -->
-<div class="roach-parade" aria-hidden="true">
-  <div class="roach-parade-inner">
-    🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp;
-  </div>
-</div>
-
-<!-- IDEOLOGY -->
-<section id="ideology">
-  <div class="section-label">📜 Core Ideology</div>
-  <h2 class="section-title">हम क्यों <span>लड़ते हैं</span></h2>
-  <p class="section-sub">Why We Fight — The Philosophy of Digital Resistance</p>
-  <div class="ideology-wrap reveal">
-    <div class="ideology-card">
-      <div class="ideology-icon">⚡</div>
-      <div class="ideology-title">System Is Broken</div>
-      <p class="ideology-text">Traditional outrage is no longer effective. The system is broken, and polite complaints have been ignored for decades. CKP accepts this reality and works within it — not by burning it down, but by documenting every crack until the weight of truth collapses it.</p>
-      <div class="ideology-num">01</div>
-    </div>
-    <div class="ideology-card">
-      <div class="ideology-icon">🎭</div>
-      <div class="ideology-title">Weaponized Irony</div>
-      <p class="ideology-text">CKP weaponizes irony, digital chronic online presence, and absolute transparency to mock, track, and expose systemic decay. Satire is the sharpest sword when all other blades have been confiscated.</p>
-      <div class="ideology-num">02</div>
-    </div>
-    <div class="ideology-card">
-      <div class="ideology-icon">📊</div>
-      <div class="ideology-title">Protest With Data</div>
-      <p class="ideology-text">We do not protest with violence. We protest with undeniable data, relentless memes, and professional ranting. Every failure is documented. Every statistic is cited. Every betrayal is timestamped. We are the paper trail they cannot shred.</p>
-      <div class="ideology-num">03</div>
-    </div>
-    <div class="ideology-card">
-      <div class="ideology-icon">🌱</div>
-      <div class="ideology-title">Grassroots Origin</div>
-      <p class="ideology-text">Born from watching regional hospitals function as "referral centers" instead of saving lives, and waiting for drinking water projects that never materialize. This isn't theoretical. This is lived experience, weaponized.</p>
-      <div class="ideology-num">04</div>
+  <!-- STATS -->
+  <div style="max-width:1200px; margin:0 auto; padding: 0 2rem;">
+    <div class="stats-row reveal">
+      <div class="stat-box">
+        <div class="stat-num">11+</div>
+        <div class="stat-label">Hours Online Daily</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Violence Incidents</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Memes Deployed</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Active Divisions</div>
+      </div>
     </div>
   </div>
-</section>
 
-<div class="divider"></div>
-
-<!-- QUOTE -->
-<div class="quote-block">
-  <p class="quote-text">"जब बाढ़ आती है, नेता बच जाते हैं। जब महामारी आती है, नेता बच जाते हैं। जब व्यवस्था चरमराती है — हम बचते हैं। हम कॉकरोच हैं।"</p>
-  <p class="quote-sub">— CKP Founding Manifesto</p>
-</div>
-
-<div class="divider"></div>
-
-<!-- SWARM -->
-<section id="swarm">
-  <div class="section-label">👥 Membership Criteria</div>
-  <h2 class="section-title">The <span>Swarm</span></h2>
-  <p class="section-sub">आधिकारिक सदस्यता मानदंड — Official Eligibility Criteria</p>
-  <div class="swarm-grid reveal">
-    <div class="swarm-card">
-      <span class="swarm-emoji">😴</span>
-      <div class="swarm-title">बेरोजगार</div>
-      <p class="swarm-desc">Unemployed: by force, by choice, or by pure principle. We don't ask. The system failed you first — your unemployment is a political statement.</p>
-    </div>
-    <div class="swarm-card">
-      <span class="swarm-emoji">🧠</span>
-      <div class="swarm-title">Physically Lazy</div>
-      <p class="swarm-desc">Lazy: physically only. The brain must continue to spiral relentlessly about the state of the world. Couch-bound activism is still activism.</p>
-    </div>
-    <div class="swarm-card">
-      <span class="swarm-emoji">📱</span>
-      <div class="swarm-title">Chronically Online</div>
-      <p class="swarm-desc">Minimum 11 hours a day of screen time, including bathroom breaks. The blue light sustains us. The WiFi is our oxygen. The notifications are our heartbeat.</p>
-    </div>
-    <div class="swarm-card">
-      <span class="swarm-emoji">🎙️</span>
-      <div class="swarm-title">Professional Ranter</div>
-      <p class="swarm-desc">Must possess a proven ability to vocalize systemic flaws with flair and logic. Incoherent rage alone is not enough. You need receipts. You need timestamps.</p>
+  <!-- ROACH PARADE -->
+  <div class="roach-parade" aria-hidden="true">
+    <div class="roach-parade-inner">
+      🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp; 🪳&nbsp;
     </div>
   </div>
-</section>
 
-<div class="divider"></div>
-
-<!-- BATTLEGROUNDS -->
-<section id="battlegrounds">
-  <div class="section-label">🎯 Divisions</div>
-  <h2 class="section-title">Key <span>Battlegrounds</span></h2>
-  <p class="section-sub">Where The Digital Resistance Is Deployed</p>
-  <div class="battle-list reveal">
-    <div class="battle-item">
-      <div class="battle-num">01</div>
-      <div class="battle-content">
-        <div class="battle-title">📋 Anti-Paper Leak Division</div>
-        <p class="battle-desc">Exposing competitive exam scams and protecting student futures. Every leaked paper is a stolen dream. We name, shame, and document with evidence.</p>
-      </div>
-      <span class="battle-status status-active">Active</span>
+  <!-- IDEOLOGY -->
+  <section id="ideology" aria-labelledby="ideology-title">
+    <div class="section-label">📜 Core Ideology</div>
+    <h2 id="ideology-title" class="section-title"><span lang="hi">हम क्यों</span> <span><span lang="hi">लड़ते हैं</span></span></h2>
+    <p class="section-sub">Why We Fight — The Philosophy of Digital Resistance</p>
+    <div class="ideology-wrap reveal">
+      <article class="ideology-card">
+        <div class="ideology-icon" aria-hidden="true">⚡</div>
+        <h3 class="ideology-title">System Is Broken</h3>
+        <p class="ideology-text">Traditional outrage is no longer effective. The system is broken, and polite complaints have been ignored for decades. CKP accepts this reality and works within it — not by burning it down, but by documenting every crack until the weight of truth collapses it.</p>
+        <div class="ideology-num" aria-hidden="true">01</div>
+      </article>
+      <article class="ideology-card">
+        <div class="ideology-icon" aria-hidden="true">🎭</div>
+        <h3 class="ideology-title">Weaponized Irony</h3>
+        <p class="ideology-text">CKP weaponizes irony, digital chronic online presence, and absolute transparency to mock, track, and expose systemic decay. Satire is the sharpest sword when all other blades have been confiscated.</p>
+        <div class="ideology-num" aria-hidden="true">02</div>
+      </article>
+      <article class="ideology-card">
+        <div class="ideology-icon" aria-hidden="true">📊</div>
+        <h3 class="ideology-title">Protest With Data</h3>
+        <p class="ideology-text">We do not protest with violence. We protest with undeniable data, relentless memes, and professional ranting. Every failure is documented. Every statistic is cited. Every betrayal is timestamped. We are the paper trail they cannot shred.</p>
+        <div class="ideology-num" aria-hidden="true">03</div>
+      </article>
+      <article class="ideology-card">
+        <div class="ideology-icon" aria-hidden="true">🌱</div>
+        <h3 class="ideology-title">Grassroots Origin</h3>
+        <p class="ideology-text">Born from watching regional hospitals function as "referral centers" instead of saving lives, and waiting for drinking water projects that never materialize. This isn't theoretical. This is lived experience, weaponized.</p>
+        <div class="ideology-num" aria-hidden="true">04</div>
+      </article>
     </div>
-    <div class="battle-item">
-      <div class="battle-num">02</div>
-      <div class="battle-content">
-        <div class="battle-title">⚖️ Judicial Transparency</div>
-        <p class="battle-desc">Campaigning to ban post-retirement political and corporate seats for judges. Independence of judiciary begins after the robe, not just during it.</p>
-      </div>
-      <span class="battle-status status-ops">Mobilizing</span>
+  </section>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- QUOTE -->
+  <blockquote class="quote-block">
+    <p class="quote-text" lang="hi">"जब बाढ़ आती है, नेता बच जाते हैं। जब महामारी आती है, नेता बच जाते हैं। जब व्यवस्था चरमराती है — हम बचते हैं। हम कॉकरोच हैं।"</p>
+    <footer class="quote-sub">— CKP Founding Manifesto</footer>
+  </blockquote>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- SWARM -->
+  <section id="swarm" aria-labelledby="swarm-title">
+    <div class="section-label">👥 Membership Criteria</div>
+    <h2 id="swarm-title" class="section-title">The <span>Swarm</span></h2>
+    <p class="section-sub"><span lang="hi">आधिकारिक सदस्यता मानदंड</span> — Official Eligibility Criteria</p>
+    <div class="swarm-grid reveal">
+      <article class="swarm-card">
+        <span class="swarm-emoji" aria-hidden="true">😴</span>
+        <h3 class="swarm-title" lang="hi">बेरोजगार</h3>
+        <p class="swarm-desc">Unemployed: by force, by choice, or by pure principle. We don't ask. The system failed you first — your unemployment is a political statement.</p>
+      </article>
+      <article class="swarm-card">
+        <span class="swarm-emoji" aria-hidden="true">🧠</span>
+        <h3 class="swarm-title">Physically Lazy</h3>
+        <p class="swarm-desc">Lazy: physically only. The brain must continue to spiral relentlessly about the state of the world. Couch-bound activism is still activism.</p>
+      </article>
+      <article class="swarm-card">
+        <span class="swarm-emoji" aria-hidden="true">📱</span>
+        <h3 class="swarm-title">Chronically Online</h3>
+        <p class="swarm-desc">Minimum 11 hours a day of screen time, including bathroom breaks. The blue light sustains us. The WiFi is our oxygen. The notifications are our heartbeat.</p>
+      </article>
+      <article class="swarm-card">
+        <span class="swarm-emoji" aria-hidden="true">🎙️</span>
+        <h3 class="swarm-title">Professional Ranter</h3>
+        <p class="swarm-desc">Must possess a proven ability to vocalize systemic flaws with flair and logic. Incoherent rage alone is not enough. You need receipts. You need timestamps.</p>
+      </article>
     </div>
-    <div class="battle-item">
-      <div class="battle-num">03</div>
-      <div class="battle-content">
-        <div class="battle-title">🔄 Political Turncoat Accountability</div>
-        <p class="battle-desc">Tracking and publicly calling out leaders who jump parties for power. Loyalty ledgers, public records, and infinite meme archives — we never forget.</p>
-      </div>
-      <span class="battle-status status-active">Active</span>
+  </section>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- BATTLEGROUNDS -->
+  <section id="battlegrounds" aria-labelledby="battlegrounds-title">
+    <div class="section-label">🎯 Divisions</div>
+    <h2 id="battlegrounds-title" class="section-title">Key <span>Battlegrounds</span></h2>
+    <p class="section-sub">Where The Digital Resistance Is Deployed</p>
+    <div class="battle-list reveal">
+      <article class="battle-item">
+        <div class="battle-num" aria-hidden="true">01</div>
+        <div class="battle-content">
+          <h3 class="battle-title">📋 Anti-Paper Leak Division</h3>
+          <p class="battle-desc">Exposing competitive exam scams and protecting student futures. Every leaked paper is a stolen dream. We name, shame, and document with evidence.</p>
+        </div>
+        <span class="battle-status status-active">Active</span>
+      </article>
+      <article class="battle-item">
+        <div class="battle-num" aria-hidden="true">02</div>
+        <div class="battle-content">
+          <h3 class="battle-title">⚖️ Judicial Transparency</h3>
+          <p class="battle-desc">Campaigning to ban post-retirement political and corporate seats for judges. Independence of judiciary begins after the robe, not just during it.</p>
+        </div>
+        <span class="battle-status status-ops">Mobilizing</span>
+      </article>
+      <article class="battle-item">
+        <div class="battle-num" aria-hidden="true">03</div>
+        <div class="battle-content">
+          <h3 class="battle-title">🔄 Political Turncoat Accountability</h3>
+          <p class="battle-desc">Tracking and publicly calling out leaders who jump parties for power. Loyalty ledgers, public records, and infinite meme archives — we never forget.</p>
+        </div>
+        <span class="battle-status status-active">Active</span>
+      </article>
+      <article class="battle-item">
+        <div class="battle-num" aria-hidden="true">04</div>
+        <div class="battle-content">
+          <h3 class="battle-title">🏗️ Local Administrative Accountability</h3>
+          <p class="battle-desc">Highlighting daily failures of regional infrastructure — from phantom water supplies to negligent medical facilities. Local issues, national shame.</p>
+        </div>
+        <span class="battle-status status-active">Active</span>
+      </article>
+      <article class="battle-item">
+        <div class="battle-num" aria-hidden="true">05</div>
+        <div class="battle-content">
+          <h3 class="battle-title">💀 Pure Meme Warfare</h3>
+          <p class="battle-desc">Operating as a counter-resistance to mainstream digital IT cells. We don't have a budget. We have creativity, rage, and an unhealthy amount of free time.</p>
+        </div>
+        <span class="battle-status status-war">Full War Mode</span>
+      </article>
     </div>
-    <div class="battle-item">
-      <div class="battle-num">04</div>
-      <div class="battle-content">
-        <div class="battle-title">🏗️ Local Administrative Accountability</div>
-        <p class="battle-desc">Highlighting daily failures of regional infrastructure — from phantom water supplies to negligent medical facilities. Local issues, national shame.</p>
-      </div>
-      <span class="battle-status status-active">Active</span>
+  </section>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- MANIFESTO -->
+  <section id="manifesto" aria-labelledby="manifesto-title">
+    <div class="section-label">📜 The Five Demands</div>
+    <h2 id="manifesto-title" class="section-title">The <span>Manifesto.</span></h2>
+    <p class="section-sub">Read it once. Read it twice. Then send it to someone who needs to read it.</p>
+
+    <div class="manifesto-demands reveal">
+      <article class="demand-item">
+        <div class="demand-left" aria-hidden="true">
+          <div class="demand-num">01</div>
+        </div>
+        <div class="demand-body">
+          <div class="demand-tag">Judicial Independence</div>
+          <p class="demand-text">If the CKP comes in power, <strong>no Chief Justice shall be granted a Rajya Sabha seat</strong> as a post-retirement reward. Justice must not be auctioned for political loyalty.</p>
+        </div>
+        <div class="demand-icon" aria-hidden="true">⚖️</div>
+      </article>
+
+      <article class="demand-item">
+        <div class="demand-left" aria-hidden="true">
+          <div class="demand-num">02</div>
+        </div>
+        <div class="demand-body">
+          <div class="demand-tag">Electoral Integrity</div>
+          <p class="demand-text">If any legitimate vote is deleted — whether in a CKP or opposition-ruled state — <strong>the Chief Election Commissioner shall be arrested under UAPA.</strong> Taking away a citizen's voting rights is no less than terrorism.</p>
+        </div>
+        <div class="demand-icon" aria-hidden="true">🗳️</div>
+      </article>
+
+      <article class="demand-item">
+        <div class="demand-left" aria-hidden="true">
+          <div class="demand-num">03</div>
+        </div>
+        <div class="demand-body">
+          <div class="demand-tag">True Gender Representation</div>
+          <p class="demand-text">Women shall receive <strong>50% reservation — not 33%</strong> — without increasing the strength of Parliament. Additionally, <strong>50% of all Cabinet positions</strong> shall be reserved for women. Tokenism ends here.</p>
+        </div>
+        <div class="demand-icon" aria-hidden="true">✊</div>
+      </article>
+
+      <article class="demand-item">
+        <div class="demand-left" aria-hidden="true">
+          <div class="demand-num">04</div>
+        </div>
+        <div class="demand-body">
+          <div class="demand-tag">Media Freedom</div>
+          <p class="demand-text">All media houses owned by Ambani and Adani shall have <strong>their licences cancelled</strong> to make way for truly independent media. <strong>Bank accounts of Godi media anchors</strong> shall be investigated. The news is not a press release.</p>
+        </div>
+        <div class="demand-icon" aria-hidden="true">📺</div>
+      </article>
+
+      <article class="demand-item">
+        <div class="demand-left" aria-hidden="true">
+          <div class="demand-num">05</div>
+        </div>
+        <div class="demand-body">
+          <div class="demand-tag">Anti-Defection Zero Tolerance</div>
+          <p class="demand-text">Any MLA or MP who defects from one party to another shall be <strong>barred from contesting elections — and from holding any public office — for 20 years.</strong> Loyalty to the people, not to the highest bidder.</p>
+        </div>
+        <div class="demand-icon" aria-hidden="true">🚫</div>
+      </article>
     </div>
-    <div class="battle-item">
-      <div class="battle-num">05</div>
-      <div class="battle-content">
-        <div class="battle-title">💀 Pure Meme Warfare</div>
-        <p class="battle-desc">Operating as a counter-resistance to mainstream digital IT cells. We don't have a budget. We have creativity, rage, and an unhealthy amount of free time.</p>
-      </div>
-      <span class="battle-status status-war">Full War Mode</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
+  <div class="divider" aria-hidden="true"></div>
 
-<!-- MANIFESTO -->
-<section id="manifesto">
-  <div class="section-label">📜 The Five Demands</div>
-  <h2 class="section-title">The <span>Manifesto.</span></h2>
-  <p class="section-sub">Read it once. Read it twice. Then send it to someone who needs to read it.</p>
+  <!-- JOIN -->
+  <section id="join" style="max-width:1200px;" aria-labelledby="join-title">
+    <div class="section-label">🪳 Enlist</div>
+    <h2 id="join-title" class="section-title">Swarm <span lang="hi">में <span>जुड़ें</span></span></h2>
+    <p class="section-sub">Join The Cockroach Kranti Party — Official Member Registration</p>
 
-  <div class="manifesto-demands reveal">
-
-    <div class="demand-item">
-      <div class="demand-left">
-        <div class="demand-num">01</div>
-      </div>
-      <div class="demand-body">
-        <div class="demand-tag">Judicial Independence</div>
-        <p class="demand-text">If the CKP comes in power, <strong>no Chief Justice shall be granted a Rajya Sabha seat</strong> as a post-retirement reward. Justice must not be auctioned for political loyalty.</p>
-      </div>
-      <div class="demand-icon">⚖️</div>
-    </div>
-
-    <div class="demand-item">
-      <div class="demand-left">
-        <div class="demand-num">02</div>
-      </div>
-      <div class="demand-body">
-        <div class="demand-tag">Electoral Integrity</div>
-        <p class="demand-text">If any legitimate vote is deleted — whether in a CKP or opposition-ruled state — <strong>the Chief Election Commissioner shall be arrested under UAPA.</strong> Taking away a citizen's voting rights is no less than terrorism.</p>
-      </div>
-      <div class="demand-icon">🗳️</div>
-    </div>
-
-    <div class="demand-item">
-      <div class="demand-left">
-        <div class="demand-num">03</div>
-      </div>
-      <div class="demand-body">
-        <div class="demand-tag">True Gender Representation</div>
-        <p class="demand-text">Women shall receive <strong>50% reservation — not 33%</strong> — without increasing the strength of Parliament. Additionally, <strong>50% of all Cabinet positions</strong> shall be reserved for women. Tokenism ends here.</p>
-      </div>
-      <div class="demand-icon">✊</div>
-    </div>
-
-    <div class="demand-item">
-      <div class="demand-left">
-        <div class="demand-num">04</div>
-      </div>
-      <div class="demand-body">
-        <div class="demand-tag">Media Freedom</div>
-        <p class="demand-text">All media houses owned by Ambani and Adani shall have <strong>their licences cancelled</strong> to make way for truly independent media. <strong>Bank accounts of Godi media anchors</strong> shall be investigated. The news is not a press release.</p>
-      </div>
-      <div class="demand-icon">📺</div>
-    </div>
-
-    <div class="demand-item">
-      <div class="demand-left">
-        <div class="demand-num">05</div>
-      </div>
-      <div class="demand-body">
-        <div class="demand-tag">Anti-Defection Zero Tolerance</div>
-        <p class="demand-text">Any MLA or MP who defects from one party to another shall be <strong>barred from contesting elections — and from holding any public office — for 20 years.</strong> Loyalty to the people, not to the highest bidder.</p>
-      </div>
-      <div class="demand-icon">🚫</div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- JOIN -->
-<section id="join" style="max-width:1200px;">
-  <div class="section-label">🪳 Enlist</div>
-  <h2 class="section-title">Swarm में <span>जुड़ें</span></h2>
-  <p class="section-sub">Join The Cockroach Kranti Party — Official Member Registration</p>
-
-  <div class="join-wrap reveal">
-    <div class="join-left">
-      <p style="font-size:0.85rem; line-height:1.8; color:var(--text2); margin-bottom:1.5rem;">
-        The swarm grows one roach at a time. By registering, you become an official member of the CKP digital resistance network. Your data is handled with full compliance under the Indian <strong style="color:var(--amber-light)">DPDP Act</strong> — never sold, never shared with third parties, used strictly for movement operations.
-      </p>
-      <div class="join-manifesto">
-        <p>
-          <strong>हम क्या वादा करते हैं:</strong><br>
-          We will document. We will expose. We will never shut up. We will outlive every system that tried to ignore us. The cockroach does not ask permission to survive.
+    <div class="join-wrap reveal">
+      <div class="join-left">
+        <p style="font-size:0.85rem; line-height:1.8; color:var(--text2); margin-bottom:1.5rem;">
+          The swarm grows one roach at a time. By registering, you become an official member of the CKP digital resistance network. Your data is handled with full compliance under the Indian <strong style="color:var(--amber-light)">DPDP Act</strong> — never sold, never shared with third parties, used strictly for movement operations.
         </p>
-        <p>
-          <strong>आप क्या वादा करते हैं:</strong><br>
-          Minimum 11 hours online. At least one quality rant per week. Sharing verified information, never misinformation. Being the last one standing when the system collapses again.
-        </p>
-        <p style="margin-top:1.5rem; font-size:0.7rem; color:var(--text3); border-top: 1px solid rgba(212,134,10,0.15); padding-top:1rem;">
-          ✅ By submitting, you consent to data collection under DPDP Act compliance.<br>
-          ✅ Your WhatsApp & email will be used exclusively for CKP operations.<br>
-          ✅ Data is never sold to third parties. Ever.
-        </p>
+        <div class="join-manifesto">
+          <p>
+            <strong lang="hi">हम क्या वादा करते हैं:</strong><br>
+            We will document. We will expose. We will never shut up. We will outlive every system that tried to ignore us. The cockroach does not ask permission to survive.
+          </p>
+          <p>
+            <strong lang="hi">आप क्या वादा करते हैं:</strong><br>
+            Minimum 11 hours online. At least one quality rant per week. Sharing verified information, never misinformation. Being the last one standing when the system collapses again.
+          </p>
+          <p style="margin-top:1.5rem; font-size:0.7rem; color:var(--text3); border-top: 1px solid rgba(212,134,10,0.15); padding-top:1rem;">
+            ✅ By submitting, you consent to data collection under DPDP Act compliance.<br>
+            ✅ Your WhatsApp & email will be used exclusively for CKP operations.<br>
+            ✅ Data is never sold to third parties. Ever.
+          </p>
+        </div>
+
+        <div style="margin-top:2rem; padding:1.5rem; background:var(--surface); border:1px solid rgba(212,134,10,0.15);">
+          <div style="font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--amber); margin-bottom:1rem;">Contact HQ</div>
+          <div style="font-size:0.75rem; color:var(--text2); line-height:2;">
+            🌐 <a href="https://www.cockroachkrantiparty.in" style="color:var(--amber); text-decoration:none;" title="Cockroach Kranti Party Official Website">www.cockroachkrantiparty.in</a><br>
+            📡 <span style="color:var(--text3);">Open source hosting — zero cost infrastructure</span><br>
+            🪳 <span style="color:var(--text3);">Digital Headquarters, India</span>
+          </div>
+        </div>
       </div>
 
-      <div style="margin-top:2rem; padding:1.5rem; background:var(--surface); border:1px solid rgba(212,134,10,0.15);">
-        <div style="font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--amber); margin-bottom:1rem;">Contact HQ</div>
-        <div style="font-size:0.75rem; color:var(--text2); line-height:2;">
-          🌐 <a href="http://www.cockroachkrantiparty.in" style="color:var(--amber); text-decoration:none;">www.cockroachkrantiparty.in</a><br>
-          📡 <span style="color:var(--text3);">Open source hosting — zero cost infrastructure</span><br>
-          🪳 <span style="color:var(--text3);">Digital Headquarters, India</span>
+      <div class="join-right">
+        <div class="form-container">
+          <h3 class="form-header">🪳 Official Member Registration Form</h3>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdnWpljDypyLafsz6WURxrTfIfWTIWCqNxoeLTX0Tq7SZctcA/viewform?embedded=true"
+            width="100%"
+            height="1654"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Cockroach Kranti Party Member Registration Form"
+            loading="lazy">Loading…</iframe>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="join-left">
-      <div class="form-container">
-        <div class="form-header">🪳 Official Member Registration Form</div>
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdnWpljDypyLafsz6WURxrTfIfWTIWCqNxoeLTX0Tq7SZctcA/viewform?embedded=true"
-          width="100%"
-          height="1654"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="CKP Member Registration Form"
-          loading="lazy">Loading…</iframe>
-      </div>
-    </div>
-  </div>
-</section>
+</main> <!-- END OF SEMANTIC MAIN CONTENT -->
 
 <!-- FOOTER -->
-<footer>
-  <img src="ckp-logo.png" alt="CKP Logo" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid rgba(212,134,10,0.4);margin-bottom:1rem;display:block;margin-left:auto;margin-right:auto;">
-  <div class="footer-tagline">कॉकरोच क्रांति पार्टी — "अटल संघर्ष। अजेय आवाज़।"</div>
-  <ul class="footer-links">
-    <li><a href="#ideology">Ideology</a></li>
-    <li><a href="#swarm">The Swarm</a></li>
-    <li><a href="#battlegrounds">Battlegrounds</a></li>
-    <li><a href="#manifesto">Manifesto</a></li>
-    <li><a href="#join">Join</a></li>
-  </ul>
+<footer aria-labelledby="footer-info">
+  <img src="ckp-logo.png" alt="Official Cockroach Janata Party Logo" width="90" height="90" loading="lazy" style="border-radius:50%;object-fit:cover;border:2px solid rgba(212,134,10,0.4);margin-bottom:1rem;display:block;margin-left:auto;margin-right:auto;">
+  <div id="footer-info" class="footer-tagline" lang="hi">कॉकरोच क्रांति पार्टी — "अटल संघर्ष। अजेय आवाज़।"</div>
+  
+  <!-- SEO KEYWORD INTEGRATION TEXT -->
+  <div class="footer-seo-text">
+    The Cockroach Kranti Party (CKP), affectionately referred to by the youth as the <strong>Cockroach Party</strong> or <strong>Cockroach Janata Party</strong>, is a leading digital youth political front. As a newly rising <strong>Cockroach Political Party in India</strong>, our ideology focuses on unfiltered systemic truth, relentless survival, and data-backed resistance. Welcome to the revolution.
+  </div>
+
+  <nav aria-label="Footer Navigation">
+    <ul class="footer-links">
+      <li><a href="#ideology" title="CKP Ideology">Ideology</a></li>
+      <li><a href="#swarm" title="CKP Swarm">The Swarm</a></li>
+      <li><a href="#battlegrounds" title="CKP Battlegrounds">Battlegrounds</a></li>
+      <li><a href="#manifesto" title="CKP Manifesto">Manifesto</a></li>
+      <li><a href="#join" title="Join CKP">Join</a></li>
+    </ul>
+  </nav>
+  
   <div class="footer-copy">
     © 2025 Cockroach Kranti Party (CKP) &nbsp;|&nbsp;
-    <a href="http://www.cockroachkrantiparty.in">www.cockroachkrantiparty.in</a> &nbsp;|&nbsp;
+    <a href="https://www.cockroachkrantiparty.in" title="Home - Cockroach Kranti Party">www.cockroachkrantiparty.in</a> &nbsp;|&nbsp;
     DPDP Act Compliant &nbsp;|&nbsp;
     We survive. We always survive. 🪳
   </div>
